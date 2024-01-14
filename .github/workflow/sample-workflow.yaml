@@ -1,0 +1,26 @@
+name: Sample Basic Job
+on:
+  # trigger/start job when push happens to main or feature/DE-6438-tf-multi-account-code/** branch
+  push:
+    branches: [ "feature/DE-6438-tf-multi-account-code" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # Steps represents a sequence of tasks that will be executed as part of the job
+    steps: 
+      # equivalent of "git clone repo"
+      - uses: actions/checkout@v3
+
+      # Runs a single command using runners shell
+      - name: Run a one-line script
+        run: echo Hello, World!
+
+      # Runs a single command using runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          sleep 20
+          tree .
+          ls 
+          cat resources/css/style.css
