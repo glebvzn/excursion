@@ -2,7 +2,7 @@ name: Sample Basic Job
 on:
   # trigger/start job when push happens to main or feature/DE-6438-tf-multi-account-code/** branch
   push:
-    branches: [ "feature/DE-6438-tf-multi-account-code" ]
+    branches: [ "test-branch" ]
 jobs:
   build:
     runs-on: ubuntu-latest
